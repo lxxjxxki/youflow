@@ -24,10 +24,10 @@ YouTube playlist manager with per-video volume control and real-time multi-devic
 
 ```
 [Player View]          [Controller View]
-서브모니터 풀스크린      메인모니터 / 스마트폰
-YouTube iframe          플레이리스트, 볼륨, 조작
+서브모니터 풀스크린         메인모니터 / 스마트폰
+YouTube iframe        플레이리스트, 볼륨, 조작
       │                        │
-      └────── WebSocket ────────┘
+      └────── WebSocket ───────┘
                    │
           Spring Boot 서버
                    │
