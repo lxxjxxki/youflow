@@ -17,8 +17,9 @@ youflow:
   jwt:
     secret: youflow-secret-key-at-least-256-bits-long-for-hs256
     expiration-ms: 86400000
-  youtube:
-    api-key: ${YOUTUBE_API_KEY:placeholder}
+
+youtube:
+  api-key: "AIzaSyCBXLvt7-EiwP0NvK0BC5Mgj8FdxQGShm0"
 
 server:
   port: 8080

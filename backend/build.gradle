@@ -26,4 +26,10 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
 }
 
-tasks.named('test') { useJUnitPlatform() }
+tasks.named('test') {
+    useJUnitPlatform()
+    // Java 21 이상에서 ByteBuddy(Mockito 내부 사용)가 JVM 런타임 클래스를
+    // 실험적 모드로 처리하도록 허용한다.
+    // Java 25 환경에서 Mockito inline mock maker가 ASM 버전 제한으로 실패하는 문제를 해결한다.
+    jvmArgs '-Dnet.bytebuddy.experimental=true'
+}

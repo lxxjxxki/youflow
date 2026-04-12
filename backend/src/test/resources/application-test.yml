@@ -3,3 +3,13 @@ spring:
     url: jdbc:postgresql://localhost:5432/youflow_test
     username: youflow
     password: youflow
+
+# 테스트 전용 JWT 설정 — 실제 시크릿과 무관한 더미 값 사용
+youflow:
+  jwt:
+    secret: test-secret-key-for-testing-purposes-only-must-be-32chars
+    expiration-ms: 86400000
+
+# 테스트 전용 YouTube API 키 — YouTubeApiClient는 테스트에서 @MockBean으로 대체되므로 실제 값 불필요
+youtube:
+  api-key: test-api-key-placeholder

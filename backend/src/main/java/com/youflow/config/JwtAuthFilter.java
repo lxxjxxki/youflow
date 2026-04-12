@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -38,7 +40,14 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             String token = header.substring(7);
             if (jwtUtil.validateToken(token)) {
                 String email = jwtUtil.getEmail(token);
-                var auth = new UsernamePasswordAuthenticationToken(email, null, List.of());
+                // @AuthenticationPrincipal UserDetails로 컨트롤러에서 받으려면
+                // principal이 UserDetails 타입이어야 한다.
+                // email을 username으로 설정한 UserDetails 객체를 생성한다.
+                UserDetails userDetails = User.withUsername(email)
+                        .password("")
+                        .authorities(List.of())
+                        .build();
+                var auth = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
         }
