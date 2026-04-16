@@ -6,6 +6,9 @@ backend/.gradle/
 backend/out/
 backend/*.class
 backend/*.jar
+rawr-backend/build/
+rawr-backend/.gradle/
+rawr-backend/out/
 
 # 로컬 전용 설정 (절대 올리지 않기)
 backend/src/main/resources/application-local.yml
