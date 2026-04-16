@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { getArticleBySlug } from '@/lib/api'
 import type { Metadata } from 'next'
 
+export const revalidate = 60
+
 interface Props {
   params: { slug: string }
 }

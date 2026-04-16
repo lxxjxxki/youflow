@@ -9,8 +9,10 @@ const BACKEND_CATEGORIES: Record<string, string> = {
   culture: 'CULTURE',
 }
 
+export const revalidate = 60
+
 // All valid routes
-const VALID_CATEGORIES = ['music', 'fashion', 'art', 'etc', 'about']
+const VALID_CATEGORIES = ['music', 'fashion', 'art', 'etc']
 
 interface Props {
   params: { category: string }
