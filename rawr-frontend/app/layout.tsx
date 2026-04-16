@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Sidebar from '@/components/Sidebar'
+import AuthInitializer from '@/components/AuthInitializer'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${cormorant.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-black text-white font-sans min-h-screen">
+        <AuthInitializer />
         <Header />
         <Sidebar />
         <main>{children}</main>

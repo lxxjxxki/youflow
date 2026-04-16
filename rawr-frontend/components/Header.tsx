@@ -60,9 +60,9 @@ export default function Header() {
         <button aria-label="Cart" disabled className="opacity-50 cursor-not-allowed">
           <CartIcon />
         </button>
-        <button aria-label="Profile" onClick={() => {}}>
+        <Link href="/mypage" aria-label="Profile">
           <PersonIcon />
-        </button>
+        </Link>
       </div>
     </header>
   )
