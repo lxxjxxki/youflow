@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import type { User } from '@/types'
+import { clearToken } from '@/lib/auth'
 
 interface UIStore {
   sidebarOpen: boolean
@@ -23,7 +24,7 @@ export const useUIStore = create<UIStore>((set) => ({
   setUser: (user) => set({ user }),
   setToken: (token) => set({ token }),
   logout: () => {
-    if (typeof window !== 'undefined') localStorage.removeItem('rawr_token')
+    clearToken()
     set({ user: null, token: null })
   },
 }))

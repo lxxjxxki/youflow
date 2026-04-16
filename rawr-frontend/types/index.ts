@@ -38,6 +38,6 @@ export interface User {
   id: string
   email: string
   username: string
-  profileImage: string
+  profileImage: string | null
   role: 'OWNER' | 'CONTRIBUTOR' | 'READER'
 }
