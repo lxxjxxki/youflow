@@ -37,10 +37,11 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
 
         User user = userRepository
                 .findByOauthProviderAndOauthId(oauthAttrs.provider(), oauthAttrs.oauthId())
+                .map(existing -> {
+                    existing.updateProfileImage(oauthAttrs.profileImage());
+                    return userRepository.save(existing);
+                })
                 .orElseGet(() -> userRepository.save(oauthAttrs.toUser()));
-
-        user.updateProfile(oauthAttrs.name(), oauthAttrs.profileImage());
-        userRepository.save(user);
 
         String jwt = jwtUtil.generate(user);
         return new DefaultOAuth2User(

@@ -59,5 +59,9 @@ public class User {
         this.profileImage = profileImage;
     }
 
+    public void updateProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
+
     public void promoteToContributor() { this.role = Role.CONTRIBUTOR; }
 }
