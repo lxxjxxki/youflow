@@ -45,7 +45,7 @@ export default function Sidebar() {
               placeholder="Search"
               className="flex-1 px-3 py-2 text-sm outline-none bg-transparent"
             />
-            <button className="pl-2 pr-3 py-2 flex items-center" aria-label="Search">
+            <button className="pl-1 pr-2 py-2 flex items-center" aria-label="Search">
               <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2">
                 <circle cx="11" cy="11" r="8" />
                 <path d="M21 21l-4.35-4.35" />
