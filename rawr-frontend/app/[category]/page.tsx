@@ -6,7 +6,9 @@ import type { ArticleResponse } from '@/types'
 // Categories connected to backend
 const BACKEND_CATEGORIES: Record<string, string> = {
   fashion: 'FASHION',
-  culture: 'CULTURE',
+  music: 'MUSIC',
+  art: 'ART',
+  etc: 'ETC',
 }
 
 export const revalidate = 60
