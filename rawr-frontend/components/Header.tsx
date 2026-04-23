@@ -45,15 +45,17 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black">
-      <button onClick={toggleSidebar} aria-label="Open menu" className="text-white">
-        <HamburgerIcon />
-      </button>
+      <div className="flex-1">
+        <button onClick={toggleSidebar} aria-label="Open menu" className="text-white">
+          <HamburgerIcon />
+        </button>
+      </div>
 
       <Link href="/" className="font-logo italic text-accent text-3xl tracking-wide">
         rawr
       </Link>
 
-      <div className="flex items-center gap-5">
+      <div className="flex-1 flex items-center justify-end gap-5">
         <Link href="/bookmarks" aria-label="Bookmarks">
           <BookmarkIcon />
         </Link>
