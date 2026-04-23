@@ -11,17 +11,13 @@ const BACKEND_CATEGORIES: Record<string, string> = {
   etc: 'ETC',
 }
 
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 // All valid routes
 const VALID_CATEGORIES = ['music', 'fashion', 'art', 'etc']
 
 interface Props {
   params: { category: string }
-}
-
-export function generateStaticParams() {
-  return VALID_CATEGORIES.map((category) => ({ category }))
 }
 
 export default async function CategoryPage({ params }: Props) {
